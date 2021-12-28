@@ -42,9 +42,9 @@ theme: /
         script:
             $session.reminderTime = $parseTree["_duckling.time"];
         random:
-            a: Уточните что именно вам напомнить?
-            a: Хорошо, о чем вам напомнить?
-        
+            a: Уточните, что именно вам напомнить?
+            a: Подскажите, о чем вас следует уведомить?
+    
         state: GetReminder
             event: noMatch
             script:
@@ -57,12 +57,11 @@ theme: /
                 );
                 $session.reminderId = event.id;
                 $temp.reminderTime = moment($session.reminderTime.value).locale("ru").calendar();
-            a: Оки, {{$temp.reminderTime}} я напомню вам "{{$parseTree.text}}".
+            a: Хорошо! {{$temp.reminderTime}} я напомню вам «{{$parseTree.text}}».
             go: /
-            
+
     state: Remind
         event!: reminderEvent
         random:
-            a: Напоминаю вам "{{$request.rawRequest.eventData.text}}".
-            a: Вы просили напомнить что хотели "{{$request.rawRequest.eventData.text}}"
-    
+            a: Напоминаю вам «{{$request.rawRequest.eventData.text}}».
+            a: Вы просили меня напомнить «{{$request.rawRequest.eventData.text}}».

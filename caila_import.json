@@ -21,13 +21,11 @@
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "Напомни мне через @duckling.time"
+      "text" : "напомни мне"
     }, {
-      "text" : "Поставь напоминание*"
+      "text" : "запиши что мне нужно"
     }, {
-      "text" : "Запиши что мне нужно"
-    }, {
-      "text" : "напоминание на @duckling.time"
+      "text" : "поставь напоминание на @duckling.time"
     } ],
     "patterns" : [ ],
     "slots" : [ {
