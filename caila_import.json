@@ -20,7 +20,15 @@
     "path" : "/SetReminder",
     "enabled" : true,
     "shared" : false,
-    "phrases" : [ ],
+    "phrases" : [ {
+      "text" : "Напомни мне*"
+    }, {
+      "text" : "Поставь напоминание*"
+    }, {
+      "text" : "Запиши что мне нужно"
+    }, {
+      "text" : "напоминание на @duckling.time"
+    } ],
     "patterns" : [ ],
     "slots" : [ {
       "name" : "duckling.time",
