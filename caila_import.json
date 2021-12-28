@@ -16,7 +16,7 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 4506742,
+    "id" : 4506753,
     "path" : "/SetReminder",
     "enabled" : true,
     "shared" : false,
@@ -26,11 +26,12 @@
       "name" : "duckling.time",
       "entity" : "duckling.time",
       "required" : true,
-      "prompts" : [ "На какое время поставить напоминание?", "Когда вас уведомить?", "В котором часу напомнить?" ]
+      "prompts" : [ "На какое время поставить напоминание?", "Когда вас уведомить?", "В котором часу напомнить?" ],
+      "array" : false
     } ],
     "priority" : 0
   }, {
-    "id" : 4506715,
+    "id" : 4506754,
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
@@ -39,7 +40,7 @@
     } ],
     "priority" : 0
   }, {
-    "id" : 4506716,
+    "id" : 4506755,
     "path" : "/привет",
     "enabled" : true,
     "shared" : false,
