@@ -21,7 +21,7 @@
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "Напомни мне*"
+      "text" : "Напомни мне через @duckling.time"
     }, {
       "text" : "Поставь напоминание*"
     }, {
