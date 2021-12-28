@@ -16,6 +16,24 @@
     "shared" : false
   },
   "intents" : [ {
+    "id" : 4507046,
+    "path" : "/Cancel",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "отмени"
+    }, {
+      "text" : "я передумал"
+    }, {
+      "text" : "хотя нет"
+    }, {
+      "text" : "убери напоминание"
+    }, {
+      "text" : "забудь"
+    } ],
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
     "id" : 4506753,
     "path" : "/SetReminder",
     "enabled" : true,

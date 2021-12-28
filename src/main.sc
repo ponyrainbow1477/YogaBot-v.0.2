@@ -8,13 +8,13 @@ require: dateTime/moment.min.js
     
 
 theme: /
-
+#стейт бот ничего не понял в тексте
     state: CatchAll || noContext = true
         event!: noMatch
         random:
             a: Прошу прощения, я вас не понял.
             a: Извините, я не совсем вас понимаю.
-        
+#стейт приветствие, уточняет город для синхронизации времени         
     state: Start || modal = true
         q!: $regex</start>
         a: Здравствуйте! Я ваш личный бот-планировщик. Я постараюсь научить вас хорошим привычкам.
@@ -36,7 +36,7 @@ theme: /
             random:
                 a: Простите, я не смогу продолжить, если не узнаю где вы находитесь.
                 a: Извините. Эту локацию я не знаю, может выберите что-то другое?
-    
+#cтейт устанавливает напоминание без точного времени в caila duckling.time    
     state: SetReminder
         intent!: /SetReminder
         script:
@@ -59,9 +59,21 @@ theme: /
                 $temp.reminderTime = moment($session.reminderTime.value).locale("ru").calendar();
             a: Хорошо! {{$temp.reminderTime}} я напомню вам «{{$parseTree.text}}».
             go: /
-
+#стейт устанавливает формат самого напоминания
     state: Remind
         event!: reminderEvent
         random:
             a: Напоминаю вам «{{$request.rawRequest.eventData.text}}».
             a: Вы просили меня напомнить «{{$request.rawRequest.eventData.text}}».
+#стейт отменяет текущее напоминание до истечения таймера
+    state: Cancel
+        intent!: /Cancel
+        if: $session.reminderId
+            script:
+                $pushgate.cancelEvent($session.reminderId);
+                delete $session.reminderId;
+            random:
+                a: Я отменил ваше последнее напоминание.
+                a: Последнее напоминание успешно отменено.
+        else:
+            go!: /CatchAll
